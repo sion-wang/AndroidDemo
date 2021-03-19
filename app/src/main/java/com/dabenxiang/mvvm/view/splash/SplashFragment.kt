@@ -15,7 +15,7 @@ class SplashFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.getUsersResult.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+        viewModel.getUsersResult.observe(viewLifecycleOwner, {
             when(it) {
                 is ApiResult.Loading -> { Timber.d("Loading") }
                 is ApiResult.Loaded -> { Timber.d("Loaded") }
